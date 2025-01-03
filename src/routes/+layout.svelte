@@ -3,7 +3,14 @@
 	import '@fontsource-variable/work-sans';
 	import { page } from '$app/state';
 	import { NavBrand, NavHamburger, NavUl, NavLi, Navbar } from 'flowbite-svelte';
+	import { goto } from '$app/navigation';
+
+	const { children } = $props();
 </script>
+
+{#snippet navLink(title: string, link: string)}
+	<NavLi class="cursor-pointer" onclick={() => goto(link)}>{title}</NavLi>
+{/snippet}
 
 <Navbar rounded color="form">
 	<NavBrand href="/">
@@ -13,8 +20,8 @@
 	</NavBrand>
 	<NavHamburger />
 	<NavUl activeUrl={page.url.pathname}>
-		<NavLi href="/">Home</NavLi>
-		<NavLi href="/blog">Blog</NavLi>
+		{@render navLink('Home', '/')}
+		{@render navLink('Blog', '/blog')}
 		<!-- <NavLi href="/photography">Photography</NavLi> -->
 		<!-- <NavLi href="/projects">Projects</NavLi> -->
 		<!-- <NavLi href="/illustrations">Projects</NavLi> -->
@@ -23,7 +30,7 @@
 </Navbar>
 
 <div class="container mx-auto mt-4">
-	<slot></slot>
+	{@render children()}
 </div>
 
 <style>
