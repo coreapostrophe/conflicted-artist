@@ -1,10 +1,8 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import '@fontsource-variable/work-sans';
 	import { page } from '$app/state';
 	import { NavBrand, NavHamburger, NavUl, NavLi, Navbar } from 'flowbite-svelte';
-
-	const activeUrl = page.url.pathname;
 </script>
 
 <Navbar rounded color="form">
@@ -14,13 +12,13 @@
 		</span>
 	</NavBrand>
 	<NavHamburger />
-	<NavUl {activeUrl}>
-		<NavLi data-sveltekit-reload href="/">Home</NavLi>
+	<NavUl activeUrl={page.url.pathname}>
+		<NavLi href="/">Home</NavLi>
 		<NavLi href="/blog">Blog</NavLi>
 		<!-- <NavLi href="/photography">Photography</NavLi> -->
 		<!-- <NavLi href="/projects">Projects</NavLi> -->
 		<!-- <NavLi href="/illustrations">Projects</NavLi> -->
-		<NavLi href="/contact">Contact</NavLi>
+		<!-- <NavLi href="/contact">Contact</NavLi> -->
 	</NavUl>
 </Navbar>
 
