@@ -13,7 +13,7 @@
 {/snippet}
 
 <Navbar rounded color="form">
-	<NavBrand href="/">
+	<NavBrand href="{base}/">
 		<span class="self-center whitespace-nowrap text-2xl font-extrabold text-primary-700">
 			Conflicted Artist
 		</span>
