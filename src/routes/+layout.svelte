@@ -3,13 +3,12 @@
 	import '@fontsource-variable/work-sans';
 	import { page } from '$app/state';
 	import { NavBrand, NavHamburger, NavUl, NavLi, Navbar } from 'flowbite-svelte';
-	import { goto } from '$app/navigation';
 
 	const { children } = $props();
 </script>
 
 {#snippet navLink(title: string, link: string)}
-	<NavLi class="cursor-pointer" onclick={() => goto(link)}>{title}</NavLi>
+	<NavLi class="cursor-pointer" href={link}>{title}</NavLi>
 {/snippet}
 
 <Navbar rounded color="form">
