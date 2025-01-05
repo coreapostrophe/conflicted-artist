@@ -1,7 +1,9 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
 
 {#snippet hobbyButtons(title: string, link: string)}
-	<a class="font-bold text-primary-700" href={link}>
+	<a class="font-bold text-primary-700" href="{base}{link}">
 		<h2 class="text-xl">{title}</h2>
 	</a>
 {/snippet}
