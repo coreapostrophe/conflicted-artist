@@ -39,7 +39,7 @@
 	</NavUl>
 </Navbar>
 
-<div class="container mx-auto mt-4 p-2 md:p-0">
+<div class="container mx-auto px-2 sm:p-0">
 	{@render children()}
 </div>
 
