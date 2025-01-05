@@ -24,7 +24,10 @@
 
 <Navbar color="form">
 	<NavBrand href="{base}/">
-		<span class="self-center whitespace-nowrap text-xl font-extrabold text-primary-700 md:text-2xl">
+		<span
+			class="	self-center whitespace-nowrap text-xl font-extrabold text-primary-700
+					md:text-2xl"
+		>
 			Conflicted Artist
 		</span>
 	</NavBrand>
@@ -44,11 +47,13 @@
 </div>
 
 <Footer
-	class="bg-grey-50 absolute bottom-0 start-0 z-20 w-full p-4 text-center md:flex md:items-center md:justify-between md:p-6"
+	class="	bg-grey-50 absolute bottom-0 start-0 z-20 w-full p-4 text-center md:flex 
+			md:items-center md:justify-between md:p-6"
 >
 	<FooterCopyright href="/" by="Daveren Cordero" year={2025} />
 	<FooterLinkGroup
-		ulClass="flex flex-wrap gap-x-4 gap-y-1 justify-center items-center mt-3 text-sm text-gray-500 dark:text-gray-400 md:mt-0"
+		ulClass="	flex flex-wrap gap-x-4 gap-y-1 justify-center items-center mt-3 text-sm 
+					text-gray-500 dark:text-gray-400 md:mt-0"
 	>
 		<FooterLink liClass="m-0" href="/">About</FooterLink>
 		<FooterLink liClass="m-0" href="/">Privacy Policy</FooterLink>
