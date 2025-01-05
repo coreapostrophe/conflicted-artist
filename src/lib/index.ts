@@ -1,2 +1,2 @@
 // place files you want to import through the `$lib` alias in this folder.
-export * from './util/svx-loader.svelte';
+export * from './util/blog-loader.svelte';
