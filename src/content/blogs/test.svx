@@ -1,6 +1,8 @@
 ---
 title: 'Test blog'
-publishedDate: '2025-01-04T19:13:30.936Z'
+publishedDate: '2025-01-05'
+tags: ['review', 'manga']
+score: '9/10'
 ---
 
 # {title}

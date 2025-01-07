@@ -24,7 +24,7 @@
 
 {#snippet navLink(title: string, link: string)}
 	{@const isActive = getActiveState(link)}
-	<li>
+	<li class="select-none">
 		<a href="{base}{link}" class={isActive ? 'text-primary-700' : undefined}>{title}</a>
 	</li>
 {/snippet}
@@ -32,8 +32,8 @@
 <Navbar color="form">
 	<NavBrand href="{base}/">
 		<span
-			class="	self-center whitespace-nowrap text-xl font-extrabold text-primary-700
-					md:text-2xl"
+			class="	select-none self-center whitespace-nowrap text-xl font-extrabold
+					text-primary-700 md:text-2xl"
 		>
 			Conflicted Artist
 		</span>

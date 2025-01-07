@@ -14,6 +14,6 @@ export const getBlogPosts = async () => {
 	return blogs.sort((firstBlog, secondBlog) => {
 		const firstBlogDate = new Date(firstBlog.metadata.publishedDate);
 		const secondBlogDate = new Date(secondBlog.metadata.publishedDate);
-		return firstBlogDate.getMilliseconds() - secondBlogDate.getMilliseconds();
+		return firstBlogDate.getTime() - secondBlogDate.getTime();
 	});
 };
