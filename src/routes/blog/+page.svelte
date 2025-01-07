@@ -3,7 +3,6 @@
 
 	const { data } = $props();
 	const { blogPosts } = data;
-	$inspect(blogPosts);
 </script>
 
 <h1 class="mb-4 text-3xl">Posts</h1>

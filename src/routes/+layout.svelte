@@ -6,7 +6,6 @@
 		NavBrand,
 		NavHamburger,
 		NavUl,
-		NavLi,
 		Navbar,
 		Footer,
 		FooterLinkGroup,
@@ -19,7 +18,7 @@
 </script>
 
 {#snippet navLink(title: string, link: string)}
-	<NavLi href="{base}{link}">{title}</NavLi>
+	<a href="{base}{link}">{title}</a>
 {/snippet}
 
 <Navbar color="form">
