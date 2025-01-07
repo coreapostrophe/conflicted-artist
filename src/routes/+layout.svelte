@@ -6,7 +6,6 @@
 		NavBrand,
 		NavHamburger,
 		NavUl,
-		NavLi,
 		Navbar,
 		Footer,
 		FooterLinkGroup,
@@ -16,10 +15,18 @@
 	import { base } from '$app/paths';
 
 	const { children } = $props();
+
+	const getActiveState = (path: string): boolean => {
+		const pathNameArray = page.url.pathname.split(/\s*(?=\/)/);
+		return pathNameArray.includes(path);
+	};
 </script>
 
 {#snippet navLink(title: string, link: string)}
-	<NavLi href="{base}{link}">{title}</NavLi>
+	{@const isActive = getActiveState(link)}
+	<li>
+		<a href="{base}{link}" class={isActive ? 'text-primary-700' : undefined}>{title}</a>
+	</li>
 {/snippet}
 
 <Navbar color="form">
