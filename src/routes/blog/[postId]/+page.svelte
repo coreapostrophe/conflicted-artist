@@ -11,12 +11,35 @@
 		goto(`${base}/blog`);
 	};
 
-	const getScore = (): { total: number; rating: number } => {
+	const getScore = (): {
+		total: number;
+		rating: number;
+		ratingCategory: 'bad' | 'alright' | 'good';
+	} => {
 		const scoreArray = score.split('/');
-		return {
-			total: Number(scoreArray?.[1]),
-			rating: Number(scoreArray?.[0])
-		};
+		const rating = Number(scoreArray?.[0]);
+		const total = Number(scoreArray?.[1]);
+		const ratingPercentage = rating / total;
+
+		let ratingCategory: 'bad' | 'alright' | 'good' = 'good';
+
+		if (ratingPercentage < 0.33) {
+			ratingCategory = 'bad';
+		} else if (ratingPercentage < 0.66) {
+			ratingCategory = 'alright';
+		} else {
+			ratingCategory = 'good';
+		}
+
+		return { rating, total, ratingCategory };
+	};
+
+	const ratingClassDefaults = 'mt-4 inline-block rounded px-2 py-2 text-2xl font-medium';
+
+	const ratingClassMap = {
+		bad: 'bg-red-200 text-red-900',
+		alright: 'bg-amber-200 text-amber-900',
+		good: 'bg-green-200 text-green-900'
 	};
 </script>
 
@@ -34,10 +57,7 @@
 
 {#if score}
 	{@const scoreObject = getScore()}
-	<div
-		class="	mt-4 inline-block rounded bg-primary-200 px-2 py-2 text-2xl font-medium
-				text-primary-900"
-	>
+	<div class={`${ratingClassDefaults} ${ratingClassMap[scoreObject.ratingCategory]}`}>
 		{scoreObject.rating}/{scoreObject.total}
 	</div>
 {/if}
