@@ -1,8 +1,0 @@
----
-title: 'Test blog 2'
-publishedDate: '2025-01-04T19:13:30.936Z'
----
-
-# {title}
-
-Hi
