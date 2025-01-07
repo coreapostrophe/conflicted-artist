@@ -34,7 +34,8 @@
 		return { rating, total, ratingCategory };
 	};
 
-	const ratingClassDefaults = 'mt-4 inline-block rounded px-2 py-2 text-2xl font-medium';
+	const ratingClassDefaults =
+		'mt-4 h-14 w-14 inline-flex justify-center items-center rounded text-2xl font-semibold';
 
 	const ratingClassMap = {
 		bad: 'bg-red-200 text-red-900',
@@ -58,7 +59,7 @@
 {#if score}
 	{@const scoreObject = getScore()}
 	<div class={`${ratingClassDefaults} ${ratingClassMap[scoreObject.ratingCategory]}`}>
-		{scoreObject.rating}/{scoreObject.total}
+		{scoreObject.rating}
 	</div>
 {/if}
 
