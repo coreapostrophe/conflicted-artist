@@ -2,7 +2,7 @@
 title: 'Test blog'
 publishedDate: '2025-01-05'
 tags: ['review', 'manga']
-score: '9/10'
+score: '9.2/10'
 ---
 
 # {title}
