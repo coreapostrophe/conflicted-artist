@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
-	import { Badge, Button, Rating } from 'flowbite-svelte';
+	import { Badge, Button, Tooltip } from 'flowbite-svelte';
+	import { EyeOutline } from 'flowbite-svelte-icons';
 
 	const { data } = $props();
 	const { Blog, metadata } = data;
 	const { tags, score } = metadata;
+
+	let showScore = $state(false);
 
 	const goBack = () => {
 		goto(`${base}/blog`);
@@ -42,6 +45,8 @@
 		alright: 'bg-amber-200 text-amber-900',
 		good: 'bg-green-200 text-green-900'
 	};
+
+	const showRatingClass = 'cursor-pointer bg-slate-500 transition hover:bg-slate-600';
 </script>
 
 <Button outline size="sm" class="mb-4 px-3 py-1" onclick={goBack}>Back</Button>
@@ -58,9 +63,20 @@
 
 {#if score}
 	{@const scoreObject = getScore()}
-	<div class={`${ratingClassDefaults} ${ratingClassMap[scoreObject.ratingCategory]}`}>
-		{scoreObject.rating}
-	</div>
+	{#if showScore}
+		<div class={`${ratingClassDefaults} ${ratingClassMap[scoreObject.ratingCategory]}`}>
+			{scoreObject.rating}
+		</div>
+	{:else}
+		<button
+			class={`${ratingClassDefaults} ${showRatingClass}`}
+			onclick={() => {
+				showScore = true;
+			}}
+		>
+			<EyeOutline class="text-white" />
+		</button>
+	{/if}
 {/if}
 
 <style lang="postcss">
